@@ -5,13 +5,17 @@ interface Props {
   fallbackSrc?: string;
   alt?: string;
   className?: string;
+  width?: string;
+  height?: string;
 }
 
 const Image: React.FC<Props> = ({
   src,
   fallbackSrc,
   alt,
-  className
+  className,
+  width,
+  height
 }) => {
   const [currentSrc, setCurrentSrc] = useState(src);
 
@@ -26,6 +30,8 @@ const Image: React.FC<Props> = ({
       className={className}
       src={currentSrc}
       alt={alt}
+      width={width}
+      height={height}
       onError={onError}
     />
   )
