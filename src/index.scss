@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper-content {
+  background-color: 		#F5F5F5;
+  display: flex;
+
+  .img-login {
+    width: 1400px;
+    height: 937px;
+  }
+
+  .button-login-direct {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    margin: 10px 5px;
+
+    &.facebook {
+      background-image: url(./assets/facebook.svg);
+    }
+
+    &.google {
+      background-image: url(./assets/google.svg);
+    }
+  }
+
+  .wrapper-login {
+    width: 460px;
+    height: 700px;
+    padding: 25px;
+    top: 20%;
+    right: 0;
+    position: absolute;
+    display: grid;
+    grid-template-rows: 85px 200px 100px;
+    grid-gap: 10px;
+    align-items: center;
+
+    .title-login {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+    }
+
+    .wrapper-form {
+      display: block;
+
+      .wrapper-inputs {
+        display: grid;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .input-login {
+          margin: 3px;
+          width: 400px;
+          padding: 20px;
+          height: 0px;
+          background-color: 	#F5F5F5;
+          border: 1px solid #E8E8E8;
+          border-radius: 3px;
+        }
+      }
+
+      .actions-login {
+        display: flex;
+        justify-content: space-between;
+
+        .checkbox-remember-me {
+          display: inline-flex;
+          margin-left: 15px;
+  
+          .remember-me {
+            font-size: 12px;
+            font-weight: 300;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            display: flex;
+          }
+        }
+
+        .forgot-password {
+          a {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .button-login {
+        width: 90%;
+        padding: 10px;
+        background-color: #4d4dff;
+        border-radius: 5px;
+        border: 1px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 23px;
+        margin-top: 25px;
+      }
+    }
+  }
+
+  .sign-up {
+    .sign-up-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+
+      span {
+        font-size: 12px;
+        font-weight: 200;
+      }
+    }
+
+    .button-sign-up {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
