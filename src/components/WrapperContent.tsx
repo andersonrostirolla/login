@@ -25,7 +25,7 @@ const WrapperContent: React.FC = () => {
         alt="imagem principal"
         height={heightImage}
       />
-      <WrapperLogin/>
+      <WrapperLogin className="wrapper-login"/>
     </div>
   )
 }

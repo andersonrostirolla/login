@@ -1,5 +1,5 @@
 body {
-  overflow-y: hidden;
+  overflow: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -191,6 +191,41 @@ code {
       .wrapper-form {
         .actions-login {
           padding: 0 97px;
+        }
+      }
+    }
+  }
+}
+
+//mobile
+
+@media (max-width: 480px) {
+  .wrapper-content {
+    .img-login {
+      width: 411px;
+      opacity: 0.2;
+    }
+
+    .wrapper-login {
+      width: auto;
+      height: auto;
+      right: auto;
+
+      .wrapper-form {
+        .wrapper-inputs {
+          .input-login {
+            width: 300px;
+          }
+        }
+
+        .actions-login {
+          padding: 0 16px;
+        }
+
+        .wrapper-button-login {
+          .button-login {
+            width: 83%;
+          }
         }
       }
     }
