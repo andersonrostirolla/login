@@ -8,6 +8,8 @@ interface Props {
   name?: string;
   value?: string;
   title?: string;
+  text?: string;
+  onClickCallback?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: React.FC<Props> = ({
@@ -17,7 +19,9 @@ const Button: React.FC<Props> = ({
   disabled,
   name,
   value,
-  title
+  title,
+  text,
+  onClickCallback
 }) => {
   return (
     <button
@@ -28,8 +32,9 @@ const Button: React.FC<Props> = ({
       name={name}
       value={value}
       title={title}
+      onClick={onClickCallback}
     >
-      {value}
+      {text}
     </button>
   )
 }
