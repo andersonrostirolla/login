@@ -13,7 +13,9 @@ const Form: React.FC<Props> = ({
   return (
     <form className={className}>
       <WrapperInputs className="wrapper-inputs"/>
-      <ActionsLogin className="actions-login"/>
+      <div className="wrapper-actions-login">
+        <ActionsLogin className="actions-login"/>
+      </div>
       <WrapperButtonLogin className="wrapper-button-login"/>
     </form>
   )
