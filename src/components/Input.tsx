@@ -9,6 +9,8 @@ interface Props {
   required?: boolean;
   value?: string;
   checked?: boolean;
+  pattern?: string;
+  title?: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -19,7 +21,9 @@ const Input: React.FC<Props> = ({
   placeholder,
   required,
   value,
-  checked
+  checked,
+  pattern,
+  title
 }) => {
   return (
     <input
@@ -31,6 +35,8 @@ const Input: React.FC<Props> = ({
       required={required}
       value={value}
       checked={checked}
+      pattern={pattern}
+      title={title}
     />
   )
 }
