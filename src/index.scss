@@ -134,17 +134,22 @@ code {
 
         .alert {
           position: fixed;
+          width: 260px;
+          height: auto;
+          border-radius: 5px;
+          font-size: 15px;
+          border: 1px solid black;
 
-          .info {
-
+          &.info {
+            background-color: #00FFFF;
           }
 
-          .warning {
-
+          &.warning {
+            background-color: #FF8C00;
           }
 
-          .error {
-
+          &.error {
+            background-color: red;
           }
         }
       }
