@@ -1,5 +1,5 @@
 const touchUserAgents: Array<RegExp> = [
-  /Andoid/i,
+  /Android/i,
   /webOS/i,
   /iPhone/i,
   /iPad/i,
