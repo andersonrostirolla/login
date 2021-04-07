@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 import { useHistory } from 'react-router-dom';
+import Alert from './Alert';
 
 interface Props {
   className?: string;
@@ -11,14 +12,20 @@ const WrapperButtonLogin: React.FC<Props> = ({
   className,
   id
 }) => {
+  const [visibility, setAlertVisible] = useState<'hidden' | 'visible'>("hidden");
   let history = useHistory();
 
-  const onClick: (ev: React.MouseEvent<HTMLButtonElement>) => void = () => {
+  const onClick: (ev: React.MouseEvent<HTMLButtonElement>) => void = (event) => {
+    event.preventDefault();
     // chamada para o backend;
     const status = true
     if (status) {
       //success
-      history.push('/logged');
+      setAlertVisible("visible");
+      setTimeout(() => {
+        setAlertVisible("hidden");
+        history.push('/logged');
+      }, 3000);
     }
   }
 
@@ -27,6 +34,12 @@ const WrapperButtonLogin: React.FC<Props> = ({
       className={className}
       id={id}
     >
+      <Alert
+        position="topright"
+        message="Acesso concedido, aguarde você será redirecionado."
+        type="info"
+        visibility={visibility}
+      />
       <Button
         type="submit"
         className="button-login"
