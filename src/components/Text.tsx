@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface Props {
   type?: string;
@@ -15,8 +16,21 @@ const Text: React.FC<Props> = ({
   className,
   itemprop
 }) => {
+  let history = useHistory();
+
+  const onClickLink = (event: any) => {
+    event.preventDefault();
+    if (url) {
+      history.push(url);
+    }
+  }
+
   const componentText = String(type).toLowerCase() === 'link'
-    ? <a href={url}>{text}</a>
+    ? <a
+        className="text-link"
+        href={url}
+        onClick={onClickLink}
+      >{text}</a>
     : <span>{text}</span>;
   
   return (

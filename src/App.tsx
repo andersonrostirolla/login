@@ -7,7 +7,9 @@ import {
 } from 'react-router-dom';
 import {
   WrapperContent,
-  Logged
+  Logged,
+  Register,
+  ForgetPassword
 } from './components';
 
 function App() {
@@ -24,6 +26,12 @@ function App() {
             <div className="App">
               <WrapperContent/>
             </div>
+          </Route>
+          <Route path="/forgetpass">
+            <ForgetPassword/>
+          </Route>
+          <Route path="/register">
+            <Register/>
           </Route>
           <Route path="/logged">
             <Logged/>

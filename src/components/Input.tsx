@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
 interface Props {
   type: string;
@@ -11,9 +11,11 @@ interface Props {
   checked?: boolean;
   pattern?: string;
   title?: string;
+  name?: string;
+  onChange?: Function;
 }
 
-const Input: React.FC<Props> = ({
+const Input: any = React.forwardRef<Props, InputHTMLAttributes<Props>>(({
   type,
   className,
   id,
@@ -23,10 +25,13 @@ const Input: React.FC<Props> = ({
   value,
   checked,
   pattern,
-  title
-}) => {
+  title,
+  name,
+  onChange
+}, ref: any) => {
   return (
     <input
+      ref={ref}
       className={className}
       id={id}
       type={type}
@@ -37,8 +42,10 @@ const Input: React.FC<Props> = ({
       checked={checked}
       pattern={pattern}
       title={title}
+      name={name}
+      onChange={onChange}
     />
   )
-}
+})
 
 export default Input;

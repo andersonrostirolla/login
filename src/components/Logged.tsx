@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import Text from './Text';
 
 const Logged: React.FC = () => {
   return (
     <div className="logged">
-      <Link to="/login">Sair</Link>
+      <Text
+        type="link"
+        url="/login"
+        text="Exit"
+        className="back-to-login"
+      />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
 import Text from './Text';
 
@@ -13,11 +13,17 @@ const Checkbox: React.FC<Props> = ({
   label,
   className
 }) => {
+  const [checked, setChecked] = useState<boolean>(false);
+  const onChange = (event: any) => {
+    setChecked(event.target.checked);
+  }
+
   return (
     <div className={className}>
       <Input
         type="checkbox"
-        checked={true}
+        checked={checked}
+        onChange={onChange}
         id="input-remember-me"
       />
       <Text

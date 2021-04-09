@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Text from './Text';
 import SignUp from './SignUp';
-import Form from './Form';
+import Login from './Login';
 import { isMobile } from '../utils/browser';
 
 interface Props {
@@ -48,7 +48,7 @@ const WrapperLogin: React.FC<Props> = ({
         text="Login to continue"
         className="title-login"
       />
-      <Form className="wrapper-form"/>
+      <Login className="wrapper-form"/>
       <SignUp signModes={signModes}/>
     </div>
   )

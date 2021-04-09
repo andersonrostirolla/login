@@ -17,16 +17,22 @@ const ActionsLogin: React.FC<Props> = ({
       id={id}
     >
       <Checkbox
-          value={false}
-          label="Remember me"
-          className="checkbox-remember-me"
-        />
-        <Text
-          type="link"
-          url="https://www.google.com.br"
-          text="Forgot password?"
-          className="forgot-password"
-        />
+        value={false}
+        label="Remember me"
+        className="checkbox-remember-me"
+      />
+      <Text
+        type="link"
+        url="/register"
+        text="Register"
+        className="register"
+      />
+      <Text
+        type="link"
+        url="/forgetpass"
+        text="Forgot password?"
+        className="forgot-password"
+      />
     </div>
   )
 }
