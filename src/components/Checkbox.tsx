@@ -14,8 +14,8 @@ const Checkbox: React.FC<Props> = ({
   className
 }) => {
   const [checked, setChecked] = useState<boolean>(false);
-  const onChange = (event: any) => {
-    setChecked(event.target.checked);
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event?.target?.checked);
   }
 
   return (

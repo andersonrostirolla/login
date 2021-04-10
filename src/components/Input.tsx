@@ -1,4 +1,8 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, {
+  InputHTMLAttributes,
+  ForwardRefExoticComponent,
+  RefAttributes
+} from 'react';
 
 interface Props {
   type: string;
@@ -15,7 +19,7 @@ interface Props {
   onChange?: Function;
 }
 
-const Input: any = React.forwardRef<Props, InputHTMLAttributes<Props>>(({
+const Input: ForwardRefExoticComponent<InputHTMLAttributes<Props> & RefAttributes<Props>> = React.forwardRef<Props, InputHTMLAttributes<Props>>(({
   type,
   className,
   id,

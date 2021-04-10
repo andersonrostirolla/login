@@ -18,7 +18,7 @@ const Text: React.FC<Props> = ({
 }) => {
   let history = useHistory();
 
-  const onClickLink = (event: any) => {
+  const onClickLink = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     if (url) {
       history.push(url);

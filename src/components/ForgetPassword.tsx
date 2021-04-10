@@ -6,6 +6,7 @@ import Text from './Text';
 import { useForm } from 'react-hook-form';
 import { gql, useLazyQuery } from '@apollo/client'
 import { messages } from '../utils/messages'
+import User from '../interfaces/User'
 
 const RECOVER_PASSWORD = gql`
   query RecoverPassword ($email: String!, $name: String!) {
@@ -40,7 +41,7 @@ const ForgetPassword: React.FC = () => {
     },
     onError: () => setAlerts(messages.recoverPassword.error, 5000, 'error')
   });
-  const onSubmit = ({ email, name }: any) => {
+  const onSubmit = ({ email, name }: User) => {
     recoverPassword({ variables: { email, name }});
   };
 

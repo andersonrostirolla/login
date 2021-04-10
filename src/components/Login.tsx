@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useLazyQuery, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form';
 import { messages } from '../utils/messages'
+import User from '../interfaces/User'
 
 interface Props {
   className?: string;
@@ -68,7 +69,7 @@ const Login: React.FC<Props> = ({
   });
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async ({ email, password }: any) => {
+  const onSubmit = async ({ email, password }: User) => {
     setTmpEmail(email);
     setTmpPassword(password);
     tryLogin({ variables: { email, password }});

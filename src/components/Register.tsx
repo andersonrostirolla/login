@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { useMutation, gql } from '@apollo/client'
 import { messages } from '../utils/messages'
 import { useHistory } from 'react-router-dom';
+import User from '../interfaces/User'
 
 const CREATE_USER = gql`
   mutation CreateUser ($data: UserInput!) {
@@ -43,7 +44,7 @@ const Register: React.FC = () => {
     onCompleted: () => setAlerts(messages.register.success, 3000, 'info', true),
     onError: () => setAlerts(messages.register.error, 3000, 'error', false)
   });
-  const onSubmit = ({ email, name, password }: any) => {
+  const onSubmit = ({ email, name, password }: User) => {
     createUser({ variables: { data: { email, password, name }}});
   };
 
