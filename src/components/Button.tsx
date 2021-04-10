@@ -33,6 +33,7 @@ const Button: React.FC<Props> = ({
       value={value}
       title={title}
       onClick={onClickCallback}
+      data-testid="button-data-test"
     >
       {text}
     </button>

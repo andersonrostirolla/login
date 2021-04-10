@@ -55,6 +55,7 @@ const Alert: React.FC<Props> = ({
     <div
       className={`alert ${type}`}
       style={{...configs, "visibility": visibility }}
+      data-testid="alert-data-test"
     >
       <Text
         text={message}

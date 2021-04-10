@@ -11,7 +11,7 @@ interface Props {
   disabled?: boolean;
   placeholder?: string;
   required?: boolean;
-  value?: string;
+  value?: string | number | boolean;
   checked?: boolean;
   pattern?: string;
   title?: string;
@@ -48,6 +48,7 @@ const Input: ForwardRefExoticComponent<InputHTMLAttributes<Props> & RefAttribute
       title={title}
       name={name}
       onChange={onChange}
+      data-testid="input-data-test"
     />
   )
 })

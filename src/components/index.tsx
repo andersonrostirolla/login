@@ -1,11 +1,35 @@
-import WrapperContent from './WrapperContent';
-import Logged from './Logged';
-import Register from './Register';
+import ActionsLogin from './ActionsLogin';
+import Alert from './Alert';
+import Button from './Button';
+import Checkbox from './Checkbox';
 import ForgetPassword from './ForgetPassword';
+import Image from './Image';
+import Input from './Input';
+import Logged from './Logged';
+import Login from './Login';
+import Register from './Register';
+import SignUp from './SignUp';
+import Text from './Text';
+import WrapperButtonLogin from './WrapperButtonLogin';
+import WrapperContent from './WrapperContent';
+import WrapperInputs from './WrapperInputs';
+import WrapperLogin from './WrapperLogin';
 
 export {
-  WrapperContent,
+  ActionsLogin,
+  Alert,
+  Button,
+  Checkbox,
+  ForgetPassword,
+  Image,
+  Input,
   Logged,
+  Login,
   Register,
-  ForgetPassword
+  SignUp,
+  Text,
+  WrapperButtonLogin,
+  WrapperContent,
+  WrapperInputs,
+  WrapperLogin
 }

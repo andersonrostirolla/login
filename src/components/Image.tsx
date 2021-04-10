@@ -33,6 +33,7 @@ const Image: React.FC<Props> = ({
       width={width}
       height={height}
       onError={onError}
+      data-testid="img-data-test"
     />
   )
 }

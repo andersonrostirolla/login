@@ -34,9 +34,10 @@ const Text: React.FC<Props> = ({
     : <span>{text}</span>;
   
   return (
-    <div 
+    <div
       className={className}
       itemProp={itemprop}
+      data-testid="text-data-test"
     >
       {componentText}
     </div>

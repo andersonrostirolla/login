@@ -4,7 +4,7 @@ import Text from './Text';
 
 interface Props {
   value: boolean;
-  label?: string;
+  label: string;
   className?: string;
 }
 
@@ -13,13 +13,16 @@ const Checkbox: React.FC<Props> = ({
   label,
   className
 }) => {
-  const [checked, setChecked] = useState<boolean>(false);
+  const [checked, setChecked] = useState<boolean>(value);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event?.target?.checked);
   }
 
   return (
-    <div className={className}>
+    <div
+      className={className}
+      data-testid="checkbox-data-test"
+    >
       <Input
         type="checkbox"
         checked={checked}
@@ -27,7 +30,7 @@ const Checkbox: React.FC<Props> = ({
         id="input-remember-me"
       />
       <Text
-        text="Remember me"
+        text={label}
         className="remember-me"
       />
     </div>
