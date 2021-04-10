@@ -21,12 +21,20 @@ const LOGIN = gql`
   }
 `;
 
+const TRYLOGIN = gql`
+  query TryLogin ($email: String!, $password: String!) {
+    tryLogin(email: $email, password: $password)
+  }
+`;
+
 const Login: React.FC<Props> = ({
   className
 }) => {
   let history = useHistory();
   const [visibility, setAlertVisible] = useState<'hidden' | 'visible'>('hidden');
   const [messageAlert, setMessageAlert] = useState('');
+  const [tmpEmail, setTmpEmail] = useState('');
+  const [tmpPassword, setTmpPassword] = useState('');
   const [typeAlert, setTypeAlert] = useState<'info' | 'error' | 'warning'>('info');
   const setAlerts = (
     message: string,
@@ -44,16 +52,26 @@ const Login: React.FC<Props> = ({
       }
     }, time);
   };
+  const [tryLogin] = useLazyQuery(TRYLOGIN, {
+    onCompleted: () => {
+      authenticate({ variables: { email: tmpEmail, password: tmpPassword } });
+      setTmpEmail('');
+      setTmpPassword('');
+    },
+    onError: (error) => {
+      setAlerts(error.message, 4000, 'error', false)
+    }
+  });
   const [authenticate] = useLazyQuery(LOGIN, {
     onCompleted: () => setAlerts(messages.login.success, 1000, 'info', true),
-    onError: () => setAlerts(messages.login.error, 3000, 'error', false)
+    onError: (error) => setAlerts(error.message, 3000, 'error', false)
   });
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async ({ email, password }: any) => {
-    authenticate({
-      variables: { email, password }
-    })
+    setTmpEmail(email);
+    setTmpPassword(password);
+    tryLogin({ variables: { email, password }});
   };
 
   return (
