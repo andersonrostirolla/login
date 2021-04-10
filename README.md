@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project developed in React + Typescript + Graphql.
+Based in: [Case](https://docs.google.com/document/d/1t2NDJ1-HnL0Jp7ZaqDeYi2OVAfworO4fv1olcUJkUJ4/edit)
 
-## Available Scripts
+# Dependencies
 
-In the project directory, you can run:
+* [Docker](https://docs.docker.com/engine/install/ubuntu/)
 
-### `yarn start`
+If prefer, you can run without docker. For that, you need these dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [NPM]: `sudo apt install npm`
+* [Node 10](https://nodejs.org/en/download/package-manager/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Configurating ENV's
 
-### `yarn test`
+Create a copy from `.env.dev` and change name to `.env`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You should use it like this if you want to upload only the `frontend` on `localhost`:
 
-### `yarn build`
+```bash
+REACT_APP_GRAPHQL_URL=https://app-login-andersonrosty.herokuapp.com
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Docker build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To build image execute this command: `docker build -t login .`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Execute without docker
 
-### `yarn eject`
+To execute without docker, its simple:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In project paste:
+ - `yarn install && yarn run dev`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Developing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To view develop access `http://localhost:3000`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Production
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This application run in [Login](https://login-react-andersonrosty.herokuapp.com/)
