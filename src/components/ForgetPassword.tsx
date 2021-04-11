@@ -58,7 +58,7 @@ const ForgetPassword: React.FC = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <Alert
-          position="topright"
+          position="top"
           message={messageAlert}
           type={typeAlert}
           visibility={visibility}

@@ -156,11 +156,17 @@ code {
 
 .alert {
   position: fixed;
-  width: 260px;
-  height: auto;
   border-radius: 5px;
-  font-size: 15px;
   border: 1px solid black;
+  width: 35%;
+  top: 0px;
+  min-height: 70px;
+  color: black;
+  font-size: x-large;
+  font-style: oblique;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
   &.info {
     background-color: #00FFFF;
@@ -251,6 +257,10 @@ code {
             width: 340px;
           }
         }
+
+        .alert {
+          width: 100%;
+        }
       }
     }
   }
@@ -271,9 +281,6 @@ code {
 }
 
 //ipad
-
-//mobile
-
 @media (max-width: 770px) {
   .wrapper-content {
     .img-login {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Text from './Text';
 
 interface Props {
-  position: 'topright' | 'topleft' | 'bottomright' | 'bottomleft';
+  position: 'top' | 'bottom';
   message: string;
   type: 'info' | 'warning' | 'error';
   visibility: 'hidden' | 'visible';
@@ -18,34 +18,19 @@ const Alert: React.FC<Props> = ({
 
   useEffect(() => {
     switch (position) {
-      case 'topright':
+      case 'top':
         setStyleConfigs({
-          right: 0,
           top: 0
         });
         break;
-      case 'topleft':
+      case 'bottom':
         setStyleConfigs({
-          left: 0,
           top: 0
-        });
-        break;
-      case 'bottomright':
-        setStyleConfigs({
-          right: 0,
-          bottom: 0
-        });
-        break;
-      case 'bottomleft':
-        setStyleConfigs({
-          left: 0,
-          bottom: 0
         });
         break;
       default:
         setStyleConfigs({
-          top: 0,
-          left: 0
+          top: 0
         });
         break;
     }

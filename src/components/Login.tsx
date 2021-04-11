@@ -81,7 +81,7 @@ const Login: React.FC<Props> = ({
       onSubmit={handleSubmit(onSubmit)}
     >
       <Alert
-        position="topright"
+        position="top"
         message={messageAlert}
         type={typeAlert}
         visibility={visibility}
