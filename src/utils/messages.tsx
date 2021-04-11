@@ -4,7 +4,8 @@ export const messages = {
     error: 'Algum problema ocorreu, tente novamente.'
   },
   login: {
-    success: 'Acesso concedido, aguarde você será redirecionado.'
+    success: 'Acesso concedido, aguarde você será redirecionado.',
+    error: 'Usuário ou senha não preenchidos!'
   },
   recoverPassword: {
     success: 'Senha recuperada!',

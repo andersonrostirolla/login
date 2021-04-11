@@ -48,12 +48,14 @@ const Login: React.FC<Props> = ({
     setAlertVisible('visible');
     setTimeout(() => {
       setAlertVisible('hidden');
+      setMessageAlert('');
       if (redirect) {
         history.push('/logged');
       }
     }, time);
   };
   const [tryLogin] = useLazyQuery(TRYLOGIN, {
+    fetchPolicy: 'network-only',
     onCompleted: () => {
       authenticate({ variables: { email: tmpEmail, password: tmpPassword } });
       setTmpEmail('');
@@ -61,15 +63,22 @@ const Login: React.FC<Props> = ({
     },
     onError: (error) => {
       setAlerts(error.message, 4000, 'error', false)
+      setTmpEmail('');
+      setTmpPassword('');
     }
   });
   const [authenticate] = useLazyQuery(LOGIN, {
+    fetchPolicy: 'network-only',
     onCompleted: () => setAlerts(messages.login.success, 1000, 'info', true),
     onError: (error) => setAlerts(error.message, 3000, 'error', false)
   });
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async ({ email, password }: User) => {
+    if (!email || !password) {
+      setAlerts(messages.login.error, 3000, 'error', false)
+      return
+    }
     setTmpEmail(email);
     setTmpPassword(password);
     tryLogin({ variables: { email, password }});
@@ -85,6 +94,7 @@ const Login: React.FC<Props> = ({
         message={messageAlert}
         type={typeAlert}
         visibility={visibility}
+        key={messageAlert}
       />
       <WrapperInputs
         className="wrapper-inputs"
