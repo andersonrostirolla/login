@@ -130,6 +130,14 @@ code {
           justify-content: center;
         }
       }
+
+      .wrapper-alert {
+        display: grid;
+        position: fixed;
+        min-height: 35px;
+        width: 35%;
+        justify-content: center;
+      }
     }
   }
 
@@ -155,21 +163,17 @@ code {
 }
 
 .alert {
-  position: fixed;
   border-radius: 5px;
-  border: 1px solid black;
-  width: 35%;
-  top: 0px;
-  min-height: 70px;
-  color: black;
-  font-size: x-large;
+  border: 1px solid #393e46;
+  width: 400px;
+  color: #393e46;
   font-style: oblique;
   justify-content: center;
   align-items: center;
   display: flex;
 
   &.info {
-    background-color: #00FFFF;
+    background-color: #f0e4d7;
   }
 
   &.warning {
@@ -177,7 +181,7 @@ code {
   }
 
   &.error {
-    background-color: red;
+    background-color: #ec5858;
   }
 }
 
@@ -258,7 +262,7 @@ code {
           }
         }
 
-        .alert {
+        .wrapper-alert {
           width: 100%;
         }
       }

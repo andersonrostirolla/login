@@ -25,7 +25,7 @@ const Alert: React.FC<Props> = ({
         break;
       case 'bottom':
         setStyleConfigs({
-          top: 0
+          bottom: 0
         });
         break;
       default:
@@ -38,14 +38,19 @@ const Alert: React.FC<Props> = ({
 
   return (
     <div
-      className={`alert ${type}`}
-      style={{...configs, "visibility": visibility }}
-      data-testid="alert-data-test"
+      className="wrapper-alert"
+      style={{...configs}}
     >
-      <Text
-        text={message}
-        className="alert-text"
-      />
+      <div
+        className={`alert ${type}`}
+        style={{"visibility": visibility}}
+        data-testid="alert-data-test"
+      >
+        <Text
+          text={message}
+          className="alert-text"
+        />
+      </div>
     </div>
   )
 }
