@@ -10,7 +10,8 @@ import {
   Logged,
   Register,
   ForgetPassword,
-  RouteMiddleware
+  RouteMiddleware,
+  Page404
 } from './components';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <RouteMiddleware path="/logged">
             <Logged/>
           </RouteMiddleware>
+          <Route component={Page404} />
         </Switch>
       </>
     </Router>

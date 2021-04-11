@@ -1,7 +1,6 @@
 import React from 'react';
 import Text from './Text';
 
-
 const RouteMiddleware: React.FC = () => {
   return (
     <div className="page-unauthorized">

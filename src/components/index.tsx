@@ -7,6 +7,7 @@ import Image from './Image';
 import Input from './Input';
 import Logged from './Logged';
 import Login from './Login';
+import Page404 from './Page404';
 import PageUnauthorized from './PageUnauthorized';
 import Register from './Register';
 import RouteMiddleware from './RouteMiddleware';
@@ -27,6 +28,7 @@ export {
   Input,
   Logged,
   Login,
+  Page404,
   PageUnauthorized,
   Register,
   RouteMiddleware,
