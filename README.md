@@ -33,6 +33,10 @@ To execute without docker, its simple:
 In project paste:
  - `yarn install && yarn run dev`
 
+# Execute tests
+
+To execute tests run: yarn test
+
 # Developing
 
 To view develop access `http://localhost:3000`
