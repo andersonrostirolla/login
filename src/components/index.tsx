@@ -7,7 +7,9 @@ import Image from './Image';
 import Input from './Input';
 import Logged from './Logged';
 import Login from './Login';
+import PageUnauthorized from './PageUnauthorized';
 import Register from './Register';
+import RouteMiddleware from './RouteMiddleware';
 import SignUp from './SignUp';
 import Text from './Text';
 import WrapperButtonLogin from './WrapperButtonLogin';
@@ -25,7 +27,9 @@ export {
   Input,
   Logged,
   Login,
+  PageUnauthorized,
   Register,
+  RouteMiddleware,
   SignUp,
   Text,
   WrapperButtonLogin,

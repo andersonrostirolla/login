@@ -6,8 +6,7 @@ import Alert from './Alert';
 import { useHistory } from 'react-router-dom';
 import { useLazyQuery, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form';
-import { messages } from '../utils/messages'
-import User from '../interfaces/User'
+import { messages, setSessionStorage } from '../utils'
 
 interface Props {
   className?: string;
@@ -74,11 +73,13 @@ const Login: React.FC<Props> = ({
   });
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async ({ email, password }: User) => {
+  const onSubmit = async ({ email, password, remember }: any) => {
     if (!email || !password) {
       setAlerts(messages.login.error, 3000, 'error', false)
       return
     }
+    setSessionStorage('remember', remember);
+    setSessionStorage('login', true);
     setTmpEmail(email);
     setTmpPassword(password);
     tryLogin({ variables: { email, password }});
@@ -101,7 +102,10 @@ const Login: React.FC<Props> = ({
         ref={register}
       />
       <div className="wrapper-actions-login">
-        <ActionsLogin className="actions-login"/>
+        <ActionsLogin
+          className="actions-login"
+          ref={register}
+        />
       </div>
       <WrapperButtonLogin className="wrapper-button-login"/>
     </form>

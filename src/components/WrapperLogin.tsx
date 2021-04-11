@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Text from './Text';
 import SignUp from './SignUp';
 import Login from './Login';
-import { isMobile } from '../utils/browser';
+import { isMobile } from '../utils';
 
 interface Props {
   className?: string;

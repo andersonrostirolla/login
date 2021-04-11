@@ -9,7 +9,8 @@ import {
   WrapperContent,
   Logged,
   Register,
-  ForgetPassword
+  ForgetPassword,
+  RouteMiddleware
 } from './components';
 
 function App() {
@@ -33,9 +34,9 @@ function App() {
           <Route path="/register">
             <Register/>
           </Route>
-          <Route path="/logged">
+          <RouteMiddleware path="/logged">
             <Logged/>
-          </Route>
+          </RouteMiddleware>
         </Switch>
       </>
     </Router>

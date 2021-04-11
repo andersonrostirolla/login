@@ -7,10 +7,10 @@ interface Props {
   id?:string;
 }
 
-const ActionsLogin: React.FC<Props> = ({
+const ActionsLogin:  any = React.forwardRef<Props, HTMLInputElement>(({
   className,
   id
-}) => {
+}, ref: any) => {
   return (
     <div
       className={className}
@@ -20,6 +20,7 @@ const ActionsLogin: React.FC<Props> = ({
         value={false}
         label="Remember me"
         className="checkbox-remember-me"
+        ref={ref}
       />
       <Text
         type="link"
@@ -35,6 +36,6 @@ const ActionsLogin: React.FC<Props> = ({
       />
     </div>
   )
-}
+})
 
 export default ActionsLogin;

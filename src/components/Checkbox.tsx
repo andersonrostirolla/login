@@ -8,11 +8,11 @@ interface Props {
   className?: string;
 }
 
-const Checkbox: React.FC<Props> = ({
+const Checkbox: any = React.forwardRef<Props, any>(({
   value,
   label,
   className
-}) => {
+}, ref: any) => {
   const [checked, setChecked] = useState<boolean>(value);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event?.target?.checked);
@@ -28,6 +28,8 @@ const Checkbox: React.FC<Props> = ({
         checked={checked}
         onChange={onChange}
         id="input-remember-me"
+        name="remember"
+        ref={ref}
       />
       <Text
         text={label}
@@ -35,6 +37,6 @@ const Checkbox: React.FC<Props> = ({
       />
     </div>
   )
-}
+})
 
 export default Checkbox;
