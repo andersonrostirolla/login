@@ -1,7 +1,6 @@
 # Getting Started
 
 Project developed in React + Typescript + Graphql.
-Based in: [Case](https://docs.google.com/document/d/1t2NDJ1-HnL0Jp7ZaqDeYi2OVAfworO4fv1olcUJkUJ4/edit)
 
 # Dependencies
 
